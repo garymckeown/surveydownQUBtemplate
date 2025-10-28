@@ -1,0 +1,303 @@
+---
+# General Settings
+format: html
+echo: false
+warning: false
+
+# Theme Settings
+theme: 
+  - default
+  - qub_surveydown_theme.scss
+barposition: top
+containercolor: green
+footer-left: 'Made with [surveydown](https://surveydown.org)'
+footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/garymckeown/surveydownQUBtemplate)'
+  
+# Survey Settings
+use-cookies: false
+auto-scroll: false
+rate-survey: false
+system-language: en
+highlight-unanswered: true
+highlight-color: blue
+capture-metadata: true
+all-questions-required: false
+
+# Document data
+params:
+  version: 1
+  date: "27/10/2025"
+  chief_investigator: "Gary McKeown"
+  project_title: "Our Project Title"
+  study_number: "EPS 25_170"
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {#welcome .sd_page}
+# Participant Information Sheet
+
+*Use the following headings as appropriate.*
+
+**Title of study:** Is the title understandable to a lay person? If not, a simplified title should be included.
+
+**1. Invitation Paragraph**
+
+This should explain that the individual is being invited to take part in a study. Participation in a study is not required or expected.
+
+*‘You are being invited to take part in a research study. Before you decide whether or not to take part it is important that you understand why the research is being done and what it will involve. Please take the time to read the following information carefully and discuss it with others if you wish. Please ask us if there is anything that is not clear or if you would like more information. Thank you for reading this.’*
+
+**2. What is the purpose of the study?**
+
+The background and aim of the study should be given here in clear language which will be understandable to a lay person.
+
+**3. Why have I been chosen?**
+
+You should explain how the person was chosen and how many participants will be in the study.
+
+**4. Do I have to take part?**
+
+You should explain that taking part in research is voluntary. For example
+
+*‘No. It is up to you to decide whether or not to take part. If you do decide to take part, you will be given this information sheet to keep and you will be asked to sign a consent form. If you choose to take part, you can change your mind at any time and withdraw from the study without giving a reason. A decision to withdraw will not affect the standard of care you receive’*
+
+**5. What will happen to me if I take part?**
+
+You should describe how long the participant will be involved in the research, if they will need to attend study visits and where these will be, how long will the visits take and what will happen during the visits. You should explain if there are additional expenses in attending these visits and if these will be covered. Details of any procedures, interventions or lifestyle changes involved must also be described (e.g. blood tests, interviews, questionnaires, food diaries, exercise programmes, focus groups etc).
+
+If the study involves human tissue then details of the type of tissue and how much will be obtained, used and disposed should also be included. The University has a licence from the Human Tissue Authority for the storage of relevant material under the Human Tissue Act. If enduring consent is being sought for use in future studies then this can be described here (include genetic analysis, transfer abroad or commercial use as relevant). For example:
+
+*‘With your permission, we would like to store some of the samples you have given us at the end of the study for future use. These samples will be stored in Queen’s University Belfast. Storage of these samples will enable us to undertake more research if new knowledge and technology becomes available. We do not know for sure what these future studies will be but they may involve genetic analysis, sharing samples with collaborators abroad or research in collaboration with partners such as commercial companies. You can indicate on the consent form if you agree to let us retain samples for future use in other ethically approved studies.’*
+
+**6. What are the possible risks or disadvantages of taking part?**
+
+Any potential risks or disadvantages associated with the research should be made clear. Examples include side effects of treatments, discovering health related findings, risk associated with procedures, possible impact on insurance etc. Measures to minimise any risk can also be included. For example:
+
+*‘There is a small risk of bruising and fainting associated with providing a blood sample. A fully trained individual will take the blood samples to ensure that any discomfort is kept to a minimum.’*
+
+If there is a likelihood of discovering health related findings about a participant during the research which may affect their well-being (eg abnormal blood test results) permission to contact their GP/Consultant should be sought prior to study participation and consent for information to be shared obtained.
+
+**7. What are the possible benefits of taking part?**
+
+Don’t over inflate the benefits of the research as this could be seen as being coercive. Where there is no intended direct benefit to the participant from taking part this should be clearly stated. If the research may provide wider benefits to society or to others in the future this can be included.
+
+**8. What if something goes wrong?**
+
+You should inform participants how complaints will be handled and what redress is available to them. This will be in accordance with the University’s Complaints from Research Participants Standard Operating Procedure. For example:
+
+If you have any concerns about any aspects of the study, you can contact the Chief Investigator, insert contact details. Should you remain unhappy and wish to make a formal complaint, you can contact the Research Governance Team at Queen’s University Belfast (Telephone: 028 9097 2529; Email: researchgovernance\@qub.ac.uk).
+
+Arrangements for compensation/insurance should also be included in this section as appropriate.
+
+**9. Will my taking part in this study be kept confidential?**
+
+You should explain how and where data will be held securely and that any identifiable information will not be used in publications. If there are limits to the confidentiality then these must also be explained. For example, in some types of research there may be a possibility that a participant could provide the research team with information that indicates a risk of harm to a child, criminal behaviour or professional malpractice and this may need to be reported to an appropriate authority. For such reporting disclosure of personal information may be required. It must be made clear to participants when such limitations to confidentiality exist. If the research team will be contacting a participant’s GP/Consultant to inform them of the study and their patient’s participation then this should be indicated and consent should be obtained as appropriate.
+
+**10. What will happen to the results of the research?**
+
+You should tell participants what will happen to the results of the research. Do you intend to publish? Will you provide the participants with a summary of the results at the end of the study or can the participants contact the research team if they wish to obtain a copy?
+
+**11. Who is organising and funding the research?**
+
+You should include details of the organisation or company sponsoring or funding the research. If the research is also being undertaken for an educational qualification (eg PhD) this should be made clear.
+
+**12. Who has reviewed the study?**
+
+You can give the name of the Research Ethics Committee that has reviewed the study. For example: *This study has been reviewed by the Faculty of Engineering and Physical Sciences Research Ethics Committee / Faculty of Medicine, Health and Life Sciences Research Ethics Committee.*
+
+**13. Contact for Further Information**
+
+You should give contact details should potential participants require further information about the study. Remember not all participants will have access to the internet and email so include phone numbers as appropriate. For students, personal mobile phones should not be used as contact points for participants to obtain further information.
+
+*This research will be conducted in compliance with data protection legislation. For more information about how we look after your information, how to access your rights and who to contact if you have any queries or concerns about data protection please visit the Queen’s University Belfast website -* [Privacy Notice for Research Participants](https://www.qub.ac.uk/privacynotice/Research/ListofResearchPrivacyNotices/PrivacyNoticeforResearchParticipants.html){target="_blank"}
+
+Thank you for your interest in this study and for taking the time to read through this information sheet.
+
+Version: {{< meta params.version >}} Date: {{< meta params.date >}}
+
+```{r}
+# Next button
+sd_next(next_page = 'consent')
+```
+:::
+
+::: {#consent .sd_page}
+# Participant Consent Form
+
+**Title of Project:** {{< meta params.project_title >}}
+
+**Chief Investigator:** {{< meta params.chief_investigator >}}
+
+**Study Number:** {{< meta params.study_number >}}
+
+```{r}
+sd_question(
+ type  = "mc",
+ id    = "consent_read_understood",
+ label = paste0("1. I confirm that I have read, or had read to me, and understand the information sheet dated ", params$date,", version:", params$version," for the above study. I have had the opportunity to ask questions and these have been answered fully."),
+ option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+ type  = "mc",
+ id    = "consent_voluntary",
+ label = "2. I understand that my participation is voluntary and I am free to withdraw at any time, without giving any reason and without my legal rights being affected.",
+ option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+ type  = "mc",
+ id    = "consent_data",
+ label = "3. I understand the study is being conducted by researchers from Queen’s University Belfast and that my personal information will be held securely on University premises and handled in compliance with data protection legislation.",
+ option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+ type  = "mc",
+ id    = "consent_anonymised",
+ label = "4. I understand that data collected as part of this study may be looked at by authorized individuals from Queen’s University Belfast [and regulatory authorities, partner institution, non-QUB Co-Investigator as applicable] where it is relevant to my taking part in this research. I give permission for these individuals to have access to this information. ",
+ option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+ type  = "mc",
+ id    = "consent_open_science",
+ label = "5. I agree to anonymous data from this study being made available through a
+publically available online data repository to promote transparency and public
+accessibility to research.",
+ option = c("Yes" = "yes", "No" = "no")
+)
+
+sd_question(
+ type  = "mc",
+ id    = "consent_participation",
+ label = "6. I agree to take part in the above study.",
+ option = c("Yes" = "yes", "No" = "no")
+)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_GPinformed",
+# label = "I agree to my GP being informed of my participation in the study [and to my #GP/Consultant being informed of any abnormal test results.]",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_publication",
+# label = "I understand that the information I provide may be published as a report. #Confidentiality and anonymity will be maintained and it will not be possible to identify me from #any publications.",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_confidentiality_limits",
+# label = "I understand that this study is confidential but there are limits to this #confidentiality. Revelations that are criminal [or in clear breach of good practice] may require #confidentiality to be broken by the researchers.",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_disclose_risk",
+# label = "I understand that what is discussed during the [interviews or observations or focus #group] is confidential with the exception that if I disclose information that indicates that I am #at risk of harming myself or others, or in danger of being harmed by someone else, the researcher #is legally obliged to pass on this information to [insert appropriate persons.]",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_recording",
+# label = "I understand the [interviews or observations or focus group] will be [tape/digitally #recorded or video recorded] and there is a possibility of direct quotation being used in #publications.",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_gift_samples",
+# label = "I agree to gift my samples to Queen’s University Belfast and I consent to the storage #and use of my sample for future research, including genetic analysis, transfer abroad and #commercial research. I understand that I will not benefit financially from any research.",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_samples_futrue_use",
+# label = "The potential benefits of keeping my [blood or other tissues] for future research have #been explained to me and I consent to the storage and use of my [blood or other tissues] for #future research, including genetic analysis, transfer abroad and commercial research. I #understand that I will not benefit financially from any research.",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_bloodtissue_storage",
+# label = "The potential benefits of keeping my blood or other tissues for future research have #been explained to me and (please choose one)",
+# option = c("I consent to the storage and use of my blood or other tissues for future research, #including genetic analysis, transfer abroad and commercial research." = "storage_consent",
+#            "I do not wish my blood or other tissues to be used for any purpose other than this #study" = "no_storage_consent")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_future_contact",
+# label = "I agree to being contacted at a later date and invited to take part in future studies #of a similar nature. I understand that I am only agreeing to receive information and I am under #no obligation to take part in any future studies. If you decide not to consent to being contacted #in the future it will not have any influence on your involvement in this particular research #study [and will not affect any standard of care that you receive.]",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+
+#sd_question(
+# type  = "mc",
+# id    = "consent_data_archived",
+# label = "I agree that the [specify the data eg anonymised transcripts, questionnaire data,audio #recordings] that I provide can be deposited in [name of data archive/institutional repository] so #it can be used for future research and learning.",
+# option = c("Yes" = "yes", "No" = "no")
+#)
+```
+
+Version: {{< meta params.version >}} Date: {{< meta params.date >}}
+
+```{r}
+# Next button
+sd_next(next_page = 'about_you')
+```
+:::
+
+::: {#about_you .sd_page}
+```{r}
+sd_question(
+ type  = 'numeric',
+ id    = 'age',
+ label = "What's your age?"
+)
+
+sd_question(
+ type   = 'mc',
+ id     = 'gender',
+ label  = "What best describes your gender?",
+ option = c(
+   "Female" = "female",
+   "Male" = "male",
+   "Prefer not to say" = "prefer_not_to_say",
+   "Prefer to self-describe:"  = "prefer_to_self_describe"
+ )
+)
+
+sd_question(
+ type  = "text",
+ id    = "gender_self_describe",
+ label = "Please self-describe your gender:"
+)
+```
+
+```{r}
+# Next button
+sd_next(next_page = 'end')
+```
+:::
+
+::: {#end .sd_page}
+## End
+
+This is the last page in the survey.
+
+```{r}
+# Close button
+sd_close()
+```
+:::

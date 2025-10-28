@@ -1,0 +1,115 @@
+/*-- scss:defaults --*/
+// quarto-scss-analysis-annotation { "origin": "qub" }
+/*-- buit from a cosmo (builtin theme) base --*/
+
+$theme: "qub_surveydown_theme" !default;
+
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #9b9b9b !default;
+$gray-600: #868e96 !default;
+$gray-700: #4a4a4a !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #2f2f2f !default;
+
+$blue:    #00a1e1 !default;
+$indigo:  #ac004d !default;
+$purple:  #672e6c !default;
+/* $pink:    #e83e8c !default; */
+$red:     #d6000d !default;
+$orange:  #f18903 !default;
+$yellow:  #ffcc00 !default;
+$green:   #94d60a !default;
+$teal:    #00afab !default;
+$cyan:    #00a1e1 !default;
+
+$primary:       $red !default;
+$secondary:     $gray-700 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-700 !default;
+
+$min-contrast-ratio:   2.6 !default;
+
+// 
+//$body-background-color: #d6000d 05%;
+//$background-color: #d6000d 05%;
+//$question.container: #d6000d 20%;
+//$border-color: #d6000d 20%;
+
+// Options
+
+$enable-rounded: false !default;
+
+// Body
+
+$body-color:    $gray-700 !default;
+
+// Fonts
+
+// stylelint-disable-next-line value-keyword-case
+$font-family-sans-serif:    "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$headings-font-weight:      400 !default;
+
+// Navbar
+
+$navbar-dark-hover-color:       rgba($white, 1) !default;
+$navbar-light-hover-color:      rgba($black, .9) !default;
+
+// Alerts
+
+$alert-border-width:            0 !default;
+
+// Progress bars
+
+$progress-height:               .5rem !default;
+
+/*-- scss:rules --*/
+
+
+// Variables
+
+$web-font-path: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
+}
+
+// Typography
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Indicators
+
+.badge {
+  &.bg-light {
+    color: $dark;
+  }
+}
+
+// Progress bars
+
+.progress {
+  @include box-shadow(none);
+
+  .progress-bar {
+    font-size: 8px;
+    line-height: 8px;
+  }
+}
+
+
+
+// quarto-scss-analysis-annotation { "origin": null }

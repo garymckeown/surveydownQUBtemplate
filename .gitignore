@@ -47,3 +47,7 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+#implementation folder and data
+_survey/
+preview_data.csv
