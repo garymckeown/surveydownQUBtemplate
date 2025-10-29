@@ -31,6 +31,12 @@ Add the repository URL:
 
 Add your chosen project directory name, and browse to the file directory location that you would your new local copy of the project to be stored in and click Create Project.
 
+---
+Once you have a local copy of your repository, you should be able to open the survey.qmd file and make any appropriate changes to create your new survey or online experiment. See the [surveydown documentation](https://www.surveydown.org) for instructions on how to add questions. 
+
+You should also be able to run a local copy of the surveydown web app by opening the app.R file and pressing the Run App button.
+
+To create a live hosted app you will need to create a SupaBase database and R Shiny instance by following the instructions given at [surveydown](https://www.surveydown.org).
 ------------------------------------------------------------------------
 
 The template includes a Participant Information Sheet and Consent form template that are provided as exemplars by the [Faculty of Engineering and Physical Sciences Research Ethics Committee](https://www.qub.ac.uk/Research/Governance-ethics-and-integrity/Ethics/FacultyResearchEthicsCommittees/) (EPS REC).
