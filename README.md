@@ -4,21 +4,26 @@ This is a minimal template for the [surveydown](https://www.surveydown.org) R pa
 
 To use this template you can either download it to create a local copy and use it as a basic RStudio project. Alternatively you can use it to create your own GitHub repository. This project has been set up as a template repository, meaning that it can be used to create new GitHub repositories. Create a new repository by clicking on the green "Use this template" dropdown button and selecting "Create a new repository" as shown in Figure 1.
 
-![Figure 1. "Use this template" Dropdown Button](images/UseThisTemplateDropdownButton.png){#UseThisTemplateDropdownButton width="600"}
+![alt text](images/UseThisTemplateDropdownButton.png "Figure 1. "Use this template" Dropdown Button")
+Figure 1. "Use this template" Dropdown Button
 
 Then fill in the appropriate details as shown in Figure 2.
 
-![Figure 2. Create a New Repository Dialogue Box](images/CreateANewRepositoryDialogueBox.png){#CreateANewRepositoryDialogBox width="500"}
+![alt text](images/CreateANewRepositoryDialogueBox.png "Figure 2. Create a New Repository Dialogue Box")
+Figure 2. Create a New Repository Dialogue Box
 
 This creates a GitHub repository with the appropriate files from the template. To create a local copy using RStudio. Open a new project using the "New Project..." option in the File menu. That will open a dialogue box like that shown in Figure 3. Choose Version Control. Then choose Git (See Figure 4.).
 
-![Figure 3. Create Project Dialogue Box](images/CreateProjectDialogueBox.png){#CreateProjectDialogueBox width="400"}
+![alt text](images/CreateProjectDialogueBox.png "Figure 3. Create Project Dialogue Box")
+Figure 3. Create Project Dialogue Box
 
-![Figure 4. Create Project From Version Control Dialogue Box](images/CreateProjectFromVersionControlDialogueBox.png){#CreateProjectFromVersionControlDialogueBox width="400"}
+![alt text](images/CreateProjectFromVersionControlDialogueBox.png "Figure 4. Create Project From Version Control Dialogue Box")
+Figure 4. Create Project From Version Control Dialogue Box
 
 This will open the final dialogue box as shown in Figure 5.
 
-![Figure 5. Clone Git Repository Dialogue Box](images/CloneGitRepositoryDialogueBox.png){#CloneGitRepositoryDialogueBox width="400"}
+![alt text](images/CloneGitRepositoryDialogueBox.png "Figure 5. Clone Git Repository Dialogue Box")
+Figure 5. Clone Git Repository Dialogue Box
 
 Add the repository URL:
 
