@@ -141,7 +141,7 @@ sd_question(
  option = c("Yes" = "yes", "No" = "no")
 )
 
-xsd_question(
+sd_question(
  type  = "mc",
  id    = "consent_voluntary",
  label = "2. I understand that my participation is voluntary and I am free to withdraw at any time, without giving any reason and without my legal rights being affected.",
@@ -302,4 +302,3 @@ This is the last page in the survey.
 # Close button
 sd_close()
 ```
-:::
