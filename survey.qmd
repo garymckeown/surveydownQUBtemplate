@@ -36,7 +36,7 @@ params:
 library(surveydown)
 ```
 
-::: {#welcome .sd_page}
+--- welcome
 # Participant Information Sheet
 
 *Use the following headings as appropriate.*
@@ -121,9 +121,10 @@ Version: {{< meta params.version >}} Date: {{< meta params.date >}}
 # Next button
 sd_next(next_page = 'consent')
 ```
-:::
 
-::: {#consent .sd_page}
+
+--- consent
+
 # Participant Consent Form
 
 **Title of Project:** {{< meta params.project_title >}}
@@ -140,7 +141,7 @@ sd_question(
  option = c("Yes" = "yes", "No" = "no")
 )
 
-sd_question(
+xsd_question(
  type  = "mc",
  id    = "consent_voluntary",
  label = "2. I understand that my participation is voluntary and I am free to withdraw at any time, without giving any reason and without my legal rights being affected.",
@@ -256,9 +257,10 @@ Version: {{< meta params.version >}} Date: {{< meta params.date >}}
 # Next button
 sd_next(next_page = 'about_you')
 ```
-:::
 
-::: {#about_you .sd_page}
+
+--- about_you
+
 ```{r}
 sd_question(
  type  = 'numeric',
@@ -289,9 +291,9 @@ sd_question(
 # Next button
 sd_next(next_page = 'end')
 ```
-:::
 
-::: {#end .sd_page}
+--- end
+
 ## End
 
 This is the last page in the survey.
