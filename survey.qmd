@@ -36,7 +36,8 @@ params:
 library(surveydown)
 ```
 
---- welcome
+--- welcome 
+
 # Participant Information Sheet
 
 *Use the following headings as appropriate.*
@@ -121,7 +122,6 @@ Version: {{< meta params.version >}} Date: {{< meta params.date >}}
 # Next button
 sd_next(next_page = 'consent')
 ```
-
 
 --- consent
 
@@ -257,7 +257,6 @@ Version: {{< meta params.version >}} Date: {{< meta params.date >}}
 # Next button
 sd_next(next_page = 'about_you')
 ```
-
 
 --- about_you
 
