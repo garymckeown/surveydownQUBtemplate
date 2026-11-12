@@ -1,0 +1,910 @@
+// ============================================================================
+// Queen's University Belfast - Surveydown Theme
+// Based on QUB Brand Guidelines 2017
+// Compatible with Quarto/Surveydown
+// ============================================================================
+
+/*-- scss:defaults --*/
+
+// ----------------------------------------------------------------------------
+// BRAND COLORS
+// ----------------------------------------------------------------------------
+
+// Primary Palette
+$qub-red-primary: #D6000D !default;        // Pantone 185 - Queen's Vibrant Red
+$qub-red-deep: #8F0E20 !default;           // Pantone 187 - Deep Red
+$qub-grey-dark: #555656 !default;          // Pantone Cool Grey 11
+$qub-grey-medium: #9B9B9B !default;        // Pantone Cool Grey 5
+$qub-white: #FFFFFF !default;
+$qub-black: #2F2F2F !default;              // 90% black for text
+
+// Secondary Palette (for accents, charts, and highlights)
+$qub-teal-light: #00AFAB !default;         // Pantone 326
+$qub-green-bright: #94D60A !default;       // Pantone 375
+$qub-blue-sky: #00A1E1 !default;           // Pantone 299
+$qub-orange: #F18903 !default;             // Pantone 144
+$qub-pink: #AC004D !default;               // Pantone 220
+$qub-purple: #672E6C !default;             // Pantone 520
+$qub-yellow: #FFCC00 !default;             // Pantone 116
+$qub-blue-dark: #004D7E !default;          // Pantone 301
+$qub-green-forest: #669933 !default;       // Pantone 362
+$qub-teal-dark: #007166 !default;          // Pantone 328
+
+// Text Colors (percentages of black)
+$qub-text-primary: rgba(47, 47, 47, 1) !default;      // 100% black
+$qub-text-body: rgba(47, 47, 47, 0.8) !default;       // 80% black
+$qub-text-secondary: rgba(47, 47, 47, 0.5) !default;  // 50% black
+$qub-text-light: rgba(47, 47, 47, 0.3) !default;      // 30% black
+
+// ----------------------------------------------------------------------------
+// TYPOGRAPHY
+// ----------------------------------------------------------------------------
+
+// Font Families
+// Primary: Brandon Text (web font to be loaded separately)
+// Fallback: Arial for system compatibility
+$font-family-sans-serif: 'Brandon Text', Arial, sans-serif !default;
+$font-family-monospace: 'Courier New', monospace !default;
+
+// Font Weights
+$qub-font-light: 300 !default;
+$qub-font-regular: 400 !default;
+$qub-font-medium: 500 !default;
+$qub-font-bold: 700 !default;
+$qub-font-black: 900 !default;
+
+// Font Sizes (converted to rem for web compatibility)
+$font-size-base: 1rem !default;           // 16px base
+$font-size-sm: 0.875rem !default;         // 14px
+$font-size-lg: 1.125rem !default;         // 18px
+
+$h1-font-size: 2rem !default;             // 32px
+$h2-font-size: 1.5rem !default;           // 24px
+$h3-font-size: 1.25rem !default;          // 20px
+$h4-font-size: 1.125rem !default;         // 18px
+$h5-font-size: 1rem !default;             // 16px
+$h6-font-size: 0.875rem !default;         // 14px
+
+// Line Heights
+$line-height-base: 1.5 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 1.75 !default;
+
+$headings-line-height: 1.2 !default;
+$headings-font-weight: $qub-font-bold !default;
+
+// ----------------------------------------------------------------------------
+// SPACING
+// ----------------------------------------------------------------------------
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+// ----------------------------------------------------------------------------
+// BOOTSTRAP VARIABLE OVERRIDES
+// ----------------------------------------------------------------------------
+
+// Body
+$body-bg: $qub-white !default;
+$body-color: $qub-text-body !default;
+
+// Links
+$link-color: $qub-red-primary !default;
+$link-decoration: none !default;
+$link-hover-color: $qub-red-deep !default;
+$link-hover-decoration: underline !default;
+
+// Primary color
+$primary: $qub-red-primary !default;
+$secondary: $qub-grey-dark !default;
+$success: $qub-green-forest !default;
+$info: $qub-blue-sky !default;
+$warning: $qub-orange !default;
+$danger: $qub-pink !default;
+
+// Borders
+$border-width: 2px !default;
+$border-color: $qub-grey-medium !default;
+$border-radius: 0 !default;
+$border-radius-sm: 0 !default;
+$border-radius-lg: 0 !default;
+
+// Buttons
+$btn-padding-y: 0.75rem !default;
+$btn-padding-x: 2rem !default;
+$btn-font-weight: $qub-font-bold !default;
+$btn-border-width: 2px !default;
+$btn-border-radius: 0 !default;
+
+// Forms
+$input-padding-y: 0.75rem !default;
+$input-padding-x: 1rem !default;
+$input-font-size: $font-size-base !default;
+$input-border-width: 2px !default;
+$input-border-color: $qub-grey-medium !default;
+$input-border-radius: 0 !default;
+$input-focus-border-color: $qub-red-primary !default;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($qub-red-primary, 0.25) !default;
+
+// Form validation
+$form-feedback-invalid-color: $qub-pink !default;
+$form-feedback-valid-color: $qub-green-forest !default;
+
+/*-- scss:rules --*/
+
+// ============================================================================
+// SURVEYDOWN SPECIFIC STYLES
+// ============================================================================
+
+// ========================================
+// BASE & TYPOGRAPHY
+// ========================================
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+  letter-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-sans-serif;
+  font-weight: $qub-font-bold;
+  color: $qub-text-primary;
+  text-align: left;
+}
+
+h1 {
+  font-weight: $qub-font-black;
+  color: $qub-red-primary;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  color: $qub-red-primary;
+  font-weight: $qub-font-bold;
+}
+
+h3 {
+  color: $qub-red-deep;
+  font-weight: $qub-font-medium;
+}
+
+h4 {
+  color: $qub-grey-dark;
+  font-weight: $qub-font-medium;
+}
+
+p {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+strong, b {
+  font-weight: $qub-font-bold;
+  color: $qub-text-primary;
+}
+
+a {
+  transition: color 0.2s ease;
+
+  &:focus {
+    outline: 2px solid $qub-red-primary;
+    outline-offset: 2px;
+  }
+}
+
+ul, ol {
+  text-align: left;
+  
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+}
+
+// ========================================
+// SURVEY CONTAINER
+// ========================================
+
+.survey-container,
+.container,
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: $qub-white;
+}
+
+// ========================================
+// SURVEY HEADER
+// ========================================
+
+.survey-header,
+header.title-block-header {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid $qub-red-primary;
+
+  .survey-logo,
+  img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  h1.title {
+    font-size: $h1-font-size;
+    font-weight: $qub-font-black;
+    color: $qub-red-primary;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle,
+  p.subtitle {
+    font-size: $h3-font-size;
+    font-weight: $qub-font-regular;
+    color: $qub-text-body;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// ========================================
+// SURVEY QUESTIONS
+// ========================================
+
+.survey-question,
+.question,
+.form-group {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: $qub-white;
+  border-left: 4px solid $qub-red-primary;
+
+  .question-label,
+  label {
+    font-size: $h4-font-size;
+    font-weight: $qub-font-medium;
+    color: $qub-text-primary;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .question-required,
+  .required {
+    color: $qub-red-primary;
+    font-weight: $qub-font-bold;
+  }
+
+  .question-help,
+  .form-text,
+  small {
+    font-size: $font-size-sm;
+    color: $qub-text-secondary;
+    margin-top: 0.25rem;
+    font-style: italic;
+  }
+}
+
+// ========================================
+// FORM INPUTS
+// ========================================
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="password"],
+textarea,
+select,
+.form-control {
+  font-family: $font-family-sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $qub-red-primary;
+    box-shadow: 0 0 0 0.2rem rgba($qub-red-primary, 0.1);
+  }
+
+  &::placeholder {
+    color: $qub-text-light;
+  }
+
+  &:disabled {
+    background-color: lighten($qub-grey-medium, 20%);
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+// ========================================
+// RADIO BUTTONS AND CHECKBOXES
+// ========================================
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $qub-grey-dark;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+
+  &:checked {
+    background-color: $qub-red-primary;
+    border-color: $qub-red-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+  }
+
+  &:focus {
+    outline: 2px solid $qub-red-primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+
+  &:checked::after {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $qub-white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input[type="checkbox"] {
+  border-radius: 2px;
+
+  &:checked::after {
+    width: 5px;
+    height: 10px;
+    border: solid $qub-white;
+    border-width: 0 2px 2px 0;
+    top: 2px;
+    left: 6px;
+    transform: rotate(45deg);
+  }
+}
+
+// Radio/Checkbox groups
+.radio-group,
+.checkbox-group,
+.form-check {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  label,
+  .form-check-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: $font-size-base;
+    color: $qub-text-primary;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $qub-red-primary;
+    }
+  }
+}
+
+// ========================================
+// BUTTONS
+// ========================================
+
+.btn,
+button[type="submit"],
+input[type="submit"] {
+  font-family: $font-family-sans-serif;
+  font-weight: $qub-font-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: 2px solid $qub-red-primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background-color: $qub-red-primary;
+  border-color: $qub-red-primary;
+  color: $qub-white;
+
+  &:hover:not(:disabled) {
+    background-color: $qub-red-deep;
+    border-color: $qub-red-deep;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($qub-red-primary, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    background-color: $qub-red-deep;
+    border-color: $qub-red-deep;
+  }
+}
+
+.btn-secondary {
+  background-color: $qub-white;
+  color: $qub-red-primary;
+  border: 2px solid $qub-red-primary;
+
+  &:hover:not(:disabled) {
+    background-color: $qub-red-primary;
+    color: $qub-white;
+    border-color: $qub-red-primary;
+  }
+}
+
+.btn-outline-primary {
+  border-color: $qub-red-primary;
+  color: $qub-red-primary;
+
+  &:hover:not(:disabled) {
+    background-color: $qub-red-primary;
+    color: $qub-white;
+  }
+}
+
+// ========================================
+// BRAND DEVICE - BRACKET HIGHLIGHTS
+// ========================================
+
+.qub-bracket {
+  position: relative;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: $qub-white;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 4px solid $qub-red-primary;
+  }
+
+  // Top-left bracket
+  &::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  // Bottom-right bracket
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+
+  &.qub-bracket-large {
+    &::before,
+    &::after {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &.qub-bracket-red-bg {
+    background-color: $qub-red-primary;
+    color: $qub-white;
+
+    &::before,
+    &::after {
+      border-color: $qub-white;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+      color: $qub-white;
+    }
+  }
+}
+
+// Key messages with brackets
+.key-message {
+  position: relative;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: $qub-white;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 4px solid $qub-red-primary;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+
+  .message-title {
+    font-size: $h2-font-size;
+    font-weight: $qub-font-black;
+    color: $qub-red-primary;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .message-body {
+    font-size: $h4-font-size;
+    color: $qub-text-body;
+  }
+}
+
+// ========================================
+// PROGRESS INDICATOR
+// ========================================
+
+.survey-progress,
+.progress {
+  width: 100%;
+  height: 8px;
+  background-color: lighten($qub-grey-medium, 20%);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 0;
+
+  .progress-bar {
+    height: 100%;
+    background-color: $qub-red-primary;
+    transition: width 0.3s ease;
+  }
+}
+
+.progress-text {
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $qub-text-secondary;
+  margin-bottom: 1.5rem;
+}
+
+// ========================================
+// VALIDATION & ERROR MESSAGES
+// ========================================
+
+.error-message,
+.validation-error,
+.invalid-feedback,
+.alert-danger {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: lighten($qub-pink, 45%);
+  border-left: 4px solid $qub-pink;
+  color: darken($qub-pink, 20%);
+  font-size: $font-size-sm;
+  font-weight: $qub-font-medium;
+}
+
+.success-message,
+.valid-feedback,
+.alert-success {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: lighten($qub-green-forest, 45%);
+  border-left: 4px solid $qub-green-forest;
+  color: darken($qub-green-forest, 20%);
+  font-size: $font-size-base;
+}
+
+.is-invalid {
+  border-color: $qub-pink !important;
+}
+
+.is-valid {
+  border-color: $qub-green-forest !important;
+}
+
+// ========================================
+// ALERTS
+// ========================================
+
+.alert {
+  border-radius: 0;
+  border-left-width: 4px;
+  
+  &.alert-primary {
+    background-color: lighten($qub-red-primary, 45%);
+    border-left-color: $qub-red-primary;
+    color: darken($qub-red-primary, 20%);
+  }
+  
+  &.alert-info {
+    background-color: lighten($qub-blue-sky, 45%);
+    border-left-color: $qub-blue-sky;
+    color: darken($qub-blue-sky, 30%);
+  }
+  
+  &.alert-warning {
+    background-color: lighten($qub-orange, 40%);
+    border-left-color: $qub-orange;
+    color: darken($qub-orange, 30%);
+  }
+}
+
+// ========================================
+// SCALE/LIKERT QUESTIONS
+// ========================================
+
+.scale-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+
+  .scale-option {
+    flex: 1;
+    text-align: center;
+    min-width: 60px;
+
+    input[type="radio"] {
+      display: block;
+      margin: 0 auto 0.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: $font-size-sm;
+      color: $qub-text-secondary;
+    }
+  }
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: $font-size-sm;
+  color: $qub-text-secondary;
+  font-style: italic;
+}
+
+// ========================================
+// MATRIX/GRID QUESTIONS
+// ========================================
+
+.matrix-table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid $qub-grey-medium;
+  }
+
+  th {
+    font-weight: $qub-font-bold;
+    color: $qub-text-primary;
+    background-color: lighten($qub-grey-medium, 25%);
+  }
+
+  tbody tr:hover {
+    background-color: lighten($qub-red-primary, 48%);
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+// ========================================
+// SURVEY FOOTER
+// ========================================
+
+.survey-footer,
+footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid $qub-grey-medium;
+  text-align: center;
+
+  .footer-text,
+  p {
+    font-size: $font-size-sm;
+    color: $qub-text-secondary;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    a {
+      font-size: $font-size-sm;
+      color: $qub-text-secondary;
+
+      &:hover {
+        color: $qub-red-primary;
+      }
+    }
+  }
+}
+
+// ========================================
+// UTILITY CLASSES
+// ========================================
+
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+.text-qub-red { color: $qub-red-primary !important; }
+.text-muted { color: $qub-text-secondary !important; }
+
+.bg-qub-red { background-color: $qub-red-primary !important; }
+.bg-light { background-color: lighten($qub-grey-medium, 25%) !important; }
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media screen and (max-width: 768px) {
+  .survey-container,
+  .container,
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .survey-header,
+  header.title-block-header {
+    padding: 1.5rem 0;
+
+    h1.title {
+      font-size: $h2-font-size;
+    }
+  }
+
+  .btn-group,
+  .button-group {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .scale-container {
+    flex-direction: column;
+
+    .scale-option {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      input[type="radio"] {
+        margin: 0 0.5rem 0 0;
+      }
+
+      label {
+        text-align: left;
+      }
+    }
+  }
+
+  .matrix-table,
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+// ========================================
+// PRINT STYLES
+// ========================================
+
+@media print {
+  body {
+    color: $qub-black;
+  }
+
+  .survey-header,
+  header.title-block-header {
+    border-bottom: 2px solid $qub-black;
+  }
+
+  .btn,
+  button {
+    display: none;
+  }
+
+  .survey-question,
+  .question,
+  .form-group {
+    page-break-inside: avoid;
+    border-left-color: $qub-black;
+  }
+
+  a {
+    color: $qub-black;
+    text-decoration: underline;
+  }
+}
+
+// ============================================================================
+// END OF SURVEYDOWN THEME
+// ============================================================================

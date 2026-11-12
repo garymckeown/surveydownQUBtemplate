@@ -286,6 +286,455 @@ sd_question(
 )
 ```
 
+--- Sportpage
+```{r}
+sd_question(
+  type  = "text",
+  id    = "word",
+  label = "What sport or sports do you play?"
+)
+```
+
+```{r}
+sd_question(
+  type  = 'numeric',
+  id    = 'duration',
+  label = "Thinking only about your main sport, how long have you played this sport in years or months. Please write the answer below and in the following question indicate if this is months or years"
+)
+
+sd_question(
+  type  = 'select',
+  id    = 'timeunits',
+  label = "Please select the appropriate time unit for your previous answer.",
+  option = c(
+    "Years" = "years",
+    "Months" = "months"
+  )
+)
+
+sd_question(
+  type  = 'select',
+  id    = 'professional',
+  label = "Have you ever played sport in a professional capacity?",
+  option = c(
+    "Yes" = "yes",
+    "No" = "no"
+  )
+)
+
+sd_question(
+  type  = 'slider',
+  id    = 'pain',
+  label = "Thinking about the level of commitment you have to your sport, could you indicate this commitment by using a number on the scale below?",
+  option = c(
+    "0 No commitment" = "0",
+    "1" = "1",
+    "2" = "2",
+    "3" = "3",
+    "4" = "4",
+    "5" = "5",
+    "6" = "6",
+    "7" = "7",
+    "8" = "8",
+    "9" = "9",
+    "10 Totally commited" = "10"
+  )
+)
+
+```
+
+```{r}
+sd_next(next_page = 'Injurypage')
+```
+
+
+--- Injurypage
+```{r}
+sd_question(
+  type  = 'select',
+  id    = 'timeunits',
+  label = "Have you ever been injured in a way that stops you playing your main sports activity?",
+  option = c(
+    "Yes" = "yes",
+    "No" = "no"
+  )
+)
+
+sd_question(
+  type  = 'select',
+  id    = 'timeunits',
+  label = "Did your injury arise from playing the sport or doing the activity?",
+  option = c(
+    "Yes" = "yes",
+    "No" = "no"
+  )
+)
+
+sd_question(
+  type  = 'slider',
+  id    = 'pain',
+  label = "Thinking about the maximum pain at the time of your injury, can you rate the pain by using a number on the scale below?",
+  option = c(
+    "0 No pain" = "0",
+    "1" = "1",
+    "2" = "2",
+    "3" = "3",
+    "4" = "4",
+    "5" = "5",
+    "6" = "6",
+    "7" = "7",
+    "8" = "8",
+    "9" = "9",
+    "10 The worst possible pain" = "10"
+  )
+)
+
+
+sd_question(
+  type  = 'slider',
+  id    = 'simple_motivation1',
+  label = "Thinking about when you were injured. How motivated were you to get back to your sport",
+  option = c(
+    "0 Not motivated" = "0",
+    "1" = "1",
+    "2" = "2",
+    "3" = "3",
+    "4" = "4",
+    "5" = "5",
+    "6" = "6",
+    "7" = "7",
+    "8" = "8",
+    "9" = "9",
+    "10 Very motivated" = "10"
+  )
+)
+
+```
+
+```{r}
+sd_next(next_page = 'ProfileOfMood')
+```
+
+
+--- ProfileOfMood
+```{r}
+#| label: Profile of Mood States (POMS-SF)
+
+# Curran, S. L., Andrykowski, M. A., & Studts, J. L. (1995). Short Form of the Profile of Mood States (POMS-SF): Psychometric information. Psychological Assessment, 7(1), 80–83. https://doi.org/10.1037/1040-3590.7.1.80
+
+sd_question(
+  type   = "matrix",
+  id     = "POMS", # Mistakenly labelled SMS
+  label  = "Read each word/statement below, decide how you have are or were feeling concerning the word/statement concerning the sports injury, and select the appropriate statement 'Not at All', 'A Little', 'Moderately', or 'Quite a Lot' or 'Extremely' to indicate your feeling.",
+  row    = c(
+    "Tense" = "Tense",
+    "Angry" = "Angry",
+    "Worn Out" = "Worn_Out",
+    "Lively" = "Lively",
+    "Confused" = "Confused",
+    "Peeved" = "Peeved",
+    "Sad" = "Sad",
+    "Active" = "Active",
+    "On Edge" = "On_Edge",
+    "Grouchy" = "Grouchy",
+    "Blue" = "Blue",
+    "Energetic" = "Energetic",
+    "Hopeless" = "Hopeless",
+    "Cheerful" = "Cheerful",
+    "Unhappy" = "Unhappy",
+    "Uneasy" = "Uneasy",
+    "Restless" = "Restless",
+    "Unable to Concentrate" = "Unable_to_Concentrate",
+    "Fatigued" = "Fatigued",
+    "Annoyed" = "Annoyed",
+    "Discouraged" = "Discouraged",
+    "Resentful" = "Resentful",
+    "Nervous" = "Nervous",
+    "Miserable" = "Miserable",
+    "Bitter" = "Bitter",
+    "Exhausted" = "Exhausted",
+    "Anxious" = "Anxious",
+    "Helpless" = "Helpless",
+    "Weary" = "Weary",
+    "Bewildered" = "Bewildered",
+    "Furious" = "Furious",
+    "Full of Pep" = "Full_of_Pep",
+    "Worthless" = "Worthless",
+    "Forgetful" = "Forgetful",
+    "Vigorous" = "Vigorous",
+    "Uncertain" = "Uncertain",
+    "Bushed" = "Bushed"
+  ),
+  option = c(
+    "Not at all" = "1",
+    "A Little" = "2",
+    "Moderately" = "3",
+    "Quite a bit" = "4",
+    "Extremely" = "5"
+  )
+)
+# Provides a nervousness (Tension–Anxiety) subscale
+# Provides a unhappiness (Depression–Dejection) subscale
+# Provides a fury (Anger–Hostility) subscale
+# Provides a energy (Vigor–Activity) subscale
+# Provides a exhaustion (Fatigue–Inertia) subscale
+# Provides a inability to concentrate (Confusion–Bewilderment) subscale
+```
+
+```{r}
+sd_next(next_page = 'Videopage')
+```
+
+
+--- Videopage
+
+Please watch this video:
+
+```{r}
+#| label: SelectVideo
+
+videoOutput("myVideo") 
+```
+
+```{r}
+sd_question(
+  type  = 'slider',
+  id    = 'interest',
+  label = "Thinking about the person in the video. How interesting did you find the video? Please use the slider below to indicate your response",
+  option = c(
+    "0 Not interesting" = "0",
+    "1" = "1",
+    "2" = "2",
+    "3" = "3",
+    "4" = "4",
+    "5" = "5",
+    "6" = "6",
+    "7" = "7",
+    "8" = "8",
+    "9" = "9",
+    "10 Very interesting" = "10"
+  )
+)
+
+#sd_question(
+#  type  = 'select',
+#  id     = 'videoTypeCheck',
+#  label  = "Who was in the video?",
+#  option = c(
+#    "Martin Lewis" = "martin_lewis",
+#    "Thierry Henry" = "thierry_henry",
+#    "Kara Lawson (Duke Univeristy)" = "kara_lawson"
+#  )
+#)
+```
+
+
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "hiddenVideoName",
+  label = "Write a word:"
+)
+```
+
+```{r}
+sd_next(next_page = 'SMSpage')
+```
+
+
+--- SMSpage
+```{r}
+#|label: simple_motivation2
+sd_question(
+  type  = 'slider',
+  id    = 'simple_motivation2',
+  label = "Thinking about when you were injured. How motivated were you to get back to your sport",
+  option = c(
+    "0 Not motivated" = "0",
+    "1" = "1",
+    "2" = "2",
+    "3" = "3",
+    "4" = "4",
+    "5" = "5",
+    "6" = "6",
+    "7" = "7",
+    "8" = "8",
+    "9" = "9",
+    "10 Very motivated" = "10"
+  )
+)
+```
+
+  
+  
+
+```{r}
+#|label: Sport Motivation Scale (SMS)
+# Pelletier LG, Tuson KM, Fortier MS, Vallerand RJ, Briere NM, Blais MR. Toward a new measure of intrinsic motivation, extrinsic motivation, and amotivation in sports: the Sport Motivation Scale (SMS). J Sport Exerc Psychol. 1995;17:35-53.
+
+sd_question(
+  type   = "matrix",
+  id     = "SMS",
+  label  = "Why Do You Practice Your Sport? Using the scale below, please indicate to what extent each of the following items corresponds to one of the reasons for which you are presently practicing your sport.",
+  row    = c(
+    "For the pleasure I feel in living exciting experiences." = "exciting",
+    "For the pleasure it gives me to know more about the sport that I practice" = "knowmore",
+    "I used to have good reasons for doing sports, but now I am asking myself if I should continue doing it" = "doubt",
+    "For the pleasure of discovering new training techniques" = "newtraining",
+    "I don't know anymore; I have the impression that I am incapable of succeeding in this sport" = "incapable",
+    "Because it allows me to be well regarded by people that I know" = "wellregarded",
+    "Because, in my opinion, it is one of the best ways to meet people" = "meetpeople",
+    "Because I feel a lot of personal satisfaction while mastering certain difficult training techniques" = "personalsatisfaction",
+    "Because it is absolutely necessary to do sports if one wants to be in shape" = "shape",
+    "For the prestige of being an athlete" = "prestige",
+    "Because it is one of the best ways I have chosen to develop other aspects of myself" = "development",
+    "For the pleasure I feel while improving some of my weak points" = "weakpoints",
+    "For the excitement I feel when I am really involved in the activity." = "excitement",
+    "Because I must do sports to feel good about myself" = "feelgoodself",
+    "For the satisfaction I experience while I am perfecting my abilities" = "perfecting",
+    "Because people around me think it is important to be in shape" = "shapeothers",
+    "Because it is a good way to learn lots of things which could be useful to me in other areas of my life." = "useful",
+    "For the intense emotions that I feel while I am doing a sport that I like" = "intenseemotions",
+    "It is not clear to me anymore; I don't really think my place is in sport" = "notclear",
+    "For the pleasure that I feel while executing certain difficult movements" = "difficultmovements",
+    "Because I would feel bad if I was not taking time to do it" = "feelbad",
+    "To show others how good I am at my sport" = "toshowothers",
+    "For the pleasure that I feel while learning training techniques that I have never tried before" = "learningtechniques",
+    "Because it is one of the best ways to maintain good relationships with my friends" = "friends",
+    "Because I like the feeling of being totally immersed in the activity" = "immersed",
+    "Because I must do sports regularly" = "must",
+    "For the pleasure of discovering new performance strategies" = "strategies",
+    "I often ask myself; I can't seem to achieve the goals that I set for myself" = "noachievement"
+  ),
+  option = c(
+    "Does not correspond at all" = "1",
+    "2" = "2",
+    "3" = "3",
+    "Corresponds moderately" = "4",
+    "5" = "5",
+    "6" = "6",
+    "Corresponds exactly" = "7"
+  )
+)
+# Provides an IM to Know Score (IM)
+# Provides an IM to Accomplish Things Score (IM)
+# Provides an IM to Experience Stimulation Score (IM)
+# Provides an Identified Score (EM)
+# Provides an Introjected Score (EM)
+# Provides an External Score (EM)
+# Provides an Amotivation Score
+
+# 2, 4, 23, 27 Intrinsic motivation - to know
+# 8, 12, 15, 20 Intrinsic motivation - to accomplish
+# 1, 13, 18, 25 Intrinsic motivation - to experience stimulation
+# 7, 11, 17, 24 Extrinsic motivation - identified
+# 9, 14, 21, 26 Extrinsic motivation - introjected
+# 6, 10, 16, 22 Extrinsic motivation - external regulation
+# 3, 5, 19, 28 Amotivation
+```
+
+```{r}
+sd_next(next_page = 'SEESpage')
+```
+
+
+--- SEESpage
+```{r}
+#| label: The Subjective Exercise Experiences Scale (SEES)
+
+# McAuley, E., & Courneya, K. S. (1994). The Subjective Exercise Experiences Scale (SEES): Development and Preliminary Validation. Journal of Sport and Exercise Psychology, 16(2), 163–177. https://doi.org/10.1123/jsep.16.2.163
+
+# Note: Items are summed to create a summary score for Positive Well-Being (Items 1, 4, 7, lo), Psychological Distress (Items 2, 5, 8, 1 I), and Fatigue (Items 3, 6, 9, 12)
+
+sd_question(
+  type   = "matrix",
+  id     = "SEES",
+  label  = "By circling a number on the scale below each of the following items, please indicate the degree to which you are experiencing each feeling after exercising. I Feel:",
+  row    = c(
+    "Great" = "Great",
+    "Awful" = "Awful",
+    "Drained" = "Drained",
+    "Positive" = "Positive",
+    "Crummy" = "Crummy",
+    "Exhausted" = "Exhausted",
+    "Strong" = "Strong",
+    "Discouraged" = "Discouraged",
+    "Fatigued" = "Fatigued",
+    "Terrific" = "Terrific",
+    "Miserable" = "Miserable",
+    "Tired" = "Tired"
+  ),
+  option = c(
+    "Not at all" = "1",
+    "2" = "2",
+    "3" = "3",
+    "Moderately" = "4",
+    "5" = "5",
+    "6" = "6",
+    "Very much so" = "7"
+  )
+)
+
+# Provides a Positive Well-Being Score
+# Provides a Psychological Distress Score
+# Provides a Fatigue Score
+```
+
+```{r}
+sd_next(next_page = 'DPASpage')
+```
+
+
+--- DPASpage
+```{r}
+#|label: Disablement in the Physically Active scale
+
+# Houston, M. N., Hoch, J. M., Van Lunen, B. L., & Hoch, M. C. (2015). The development of summary components for the Disablement in the Physically Active scale in collegiate athletes. Quality of Life Research, 24(11), 2657–2662. https://doi.org/10.1007/s11136-015-1007-6
+
+# Note: Items are summed to create a summary score for Positive Well-Being (Items 1, 4, 7, lo), Psychological Distress (Items 2, 5, 8, 1 I), and Fatigue (Items 3, 6, 9, 12)
+
+sd_question(
+  type   = "matrix",
+  id     = "DPAS",
+  label  = "Please answer each statement selcting the answer that most closely describes your problem(s) within the past 24 hours. Each problem has possbile descriptors under each. Not all descriptors may apply to you but are given as common examples.",
+  row    = c(
+    "Do I have pain?" = "Pain",
+    "Do I have impaired motion? Ex. Decreased range/ease of motion, flexibility, and/or increased stiffness Muscular Functioning" = "Motion",
+    "Do I have impaired muscle function? Ex. Decreased strength, power, endurance, and/or increased fatigue" = "MuscularFunctioning",
+    "Do I have impaired stability? Ex. The injured area feels loose, gives out, or gives way" = "Stability",
+    "Do I have difficulty with changing directions in activity? Ex. Twisting, turning, starting/stopping, cutting, pivoting" = "ChangingDirections",
+    "Do I have difficulty with daily actions that I would normally do? Ex. Walking, squatting, getting up, lifting, carrying, bending over, reaching, and going up/down stairs" = "DailyActions",
+    "Do I have difficulty maintaining the same position for a long period of time? Ex. Standing, sitting, keeping the arm overhead, or sleeping" = "MaintainingPositions",
+    "Do I have difficulties with performing skills that are required for physical activity? Ex. Running, jumping, kicking, throwing & catching" = "SkillPerformance1",
+    "Do I have difficulties with performing skills that are required for physical activity? Ex. Coordination, agility, precision & balance" = "SkillPerformance2",
+    "Do I have difficulty maintaining my fitness level? Ex. Conditioning, weight lifting & cardiovascular endurance" = "OverallFitness1",
+    "Do I have difficulty with participating in activities? Ex. Particpating in leisure activities, hobbies, and games" = "ParticipationinActivites1",
+    "Do I have difficulty with participating in activities? Ex. Participating in my sports) of preference" = "ParticipationinActivites2",
+    "Do I have difficulties with increased uncertainty, stress, pressure, and/or anxiety" = "WellBeing1",
+    "Do I have difficulties with altered relationships with team, friends, and/or colleagues" = "WellBeing2",
+    "Do I have difficulties with decreased overall energy" = "WellBeing3",
+    "Do I have difficulties with changes in my mood and/or increased frustration" = "WellBeing4"
+  ),
+  option = c(
+    "No problem" = "1",
+    "Does not affect" = "2",
+    "Slight" = "3",
+    "Moderate" = "4",
+    "Severe" = "5"
+  )
+)
+
+# Provides a DPA-Physical Score
+# Provides a DPA-Mental Score
+# Provides a DPA-Total Score
+```
+
+```{r}
+sd_next(next_page = 'end')
+```
+
+
 ```{r}
 # Next button
 sd_next(next_page = 'end')
@@ -295,7 +744,7 @@ sd_next(next_page = 'end')
 
 ## End
 
-This is the last page in the survey.
+The debrief goes here
 
 ```{r}
 # Close button
