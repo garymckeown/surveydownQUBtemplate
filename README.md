@@ -37,6 +37,24 @@ Once you have a local copy of your repository, you should be able to open the su
 You should also be able to run a local copy of the surveydown web app by opening the app.R file and pressing the Run App button.
 
 To create a live hosted app you will need to create a SupaBase database and R Shiny instance by following the instructions given at [surveydown](https://www.surveydown.org).
+
+------------------------------------------------------------------------
+
+## Requirements
+
+This template requires **surveydown 1.3.0 or later**. Install or update it with:
+
+``` r
+install.packages("pak")
+pak::pak("surveydown")
+```
+
+The template ships in `mode: preview` (set under `survey-settings` in `survey.qmd`), so responses are saved to a local `preview_data.csv` and no database is needed for testing. To collect real responses, run `sd_db_config()` and set `mode: database`.
+
+## Working with AI coding agents
+
+[AGENTS.md](AGENTS.md) gives AI coding agents guidance for this repository: the file layout, surveydown 1.3.0 conventions and common how-tos. It also tells agents to fetch the latest official [surveydown-skill](https://github.com/surveydown-dev/surveydown-skill) instructions from GitHub at the start of each session, so no local install is needed. (The `npx skills add` installer currently fails because of invalid frontmatter in the skill's `SKILL.md`.)
+
 ------------------------------------------------------------------------
 
 The template includes a Participant Information Sheet and Consent form template that are provided as exemplars by the [Faculty of Engineering and Physical Sciences Research Ethics Committee](https://www.qub.ac.uk/Research/Governance-ethics-and-integrity/Ethics/FacultyResearchEthicsCommittees/) (EPS REC).
